@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container-reservations container">
     <div class="takeaway">
       <div class="headline">
         <h2>Takeaway</h2>
@@ -44,15 +44,15 @@ export default {
 <style scoped>
 .takeaway {
   position: relative;
+  margin-bottom: 8em;
 }
 
 .takeaway h2 {
   font-size: 2.5em;
-  text-transform: uppercase;
 }
 
 .takeaway img {
-  padding: 1em;
+  margin: 2em 0;
 }
 
 .headline {
@@ -65,7 +65,8 @@ export default {
   color: var(--dark);
   width: 15em;
   height: 2em;
-  padding: 2.5em 2em;
+  padding: 2.5em 0 3em 0;
+  text-transform: uppercase;
   transform: rotate(-15deg);
 }
 
@@ -75,14 +76,16 @@ export default {
 
 .reservations {
   background: var(--primary);
+  border: 2px solid var(--light);
   color: var(--light);
-  margin: 1em;
+  margin: 1em 0;
 }
 
 .inner-reservations {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-transform: uppercase;
   padding: 1em;
   height: 30em;
 }
@@ -111,16 +114,8 @@ input[type="date"]:focus {
   outline: var(--light);
 }
 
+/* Chrome/ Opera/ Safari */
 ::-webkit-input-placeholder {
-  /* Chrome/Opera/Safari */
-  color: var(--light);
-}
-::-moz-placeholder {
-  /* Firefox 19+ */
-  color: var(--light);
-}
-:-moz-placeholder {
-  /* Firefox 18- */
   color: var(--light);
 }
 
@@ -134,5 +129,79 @@ input[type="submit"]:hover {
   background: var(--dark);
   border: none;
   color: var(--light);
+}
+
+@media only screen and (min-width: 768px) {
+  .reservations {
+    margin: 1em 0 15em 0;
+  }
+
+  .inner-reservations {
+    height: 40em;
+    padding: 3em;
+  }
+
+  .inner-reservations h2 {
+    padding-bottom: 2em;
+  }
+
+  input {
+    margin: 1em;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .container-reservations {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    height: 100vh;
+  }
+
+  .headline {
+    left: -2em;
+    width: 17em;
+    padding: 2.5em 0;
+  }
+
+  .headline img {
+    width: 17em;
+  }
+
+  .takeaway {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .takeaway h2 {
+    font-size: 3rem;
+  }
+
+  .takeaway {
+    font-size: 1.5rem;
+  }
+
+  .takeaway img {
+    margin: 3em 0 2em 0;
+  }
+
+  .reservations {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: column;
+    height: 31em;
+    margin: auto 0 0 0;
+  }
+
+  .inner-reservations {
+    width: 23em;
+    height: 30em;
+    padding: 1.5em;
+  }
+
+  .inner-reservations h2 {
+    padding: 1em 0 0.5em 0;
+  }
 }
 </style>

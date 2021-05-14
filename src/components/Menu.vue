@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container-menu container">
     <div class="menu">
       <div class="menu-inner">
         <h1>Menu</h1>
@@ -47,7 +47,7 @@ export default {
 .menu {
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--dark);
+  border: 2px solid var(--dark);
   background-image: linear-gradient(
       rgba(255, 255, 255, 0.9),
       rgba(255, 255, 255, 0.9)
@@ -55,12 +55,12 @@ export default {
     url("../../public/img/menu.png");
   background-repeat: no-repeat;
   background-size: cover;
-  margin: 1em;
+  margin: 3em 0 8em 0;
 }
 
 .menu-inner {
   text-align: center;
-  padding: 2em;
+  padding: 2em 1.5em;
 }
 
 .menu-inner-text {
@@ -74,6 +74,50 @@ export default {
 }
 
 .menu-img {
-  margin: 1em;
+  margin: 1em 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .menu {
+    justify-content: center;
+    height: 45em;
+  }
+
+  .menu-inner {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .container-menu {
+    display: flex;
+    height: 100vh;
+    position: relative;
+  }
+
+  .menu {
+    position: absolute;
+    bottom: 4em;
+    width: 26em;
+    height: 32em;
+    margin: auto 0 0 0;
+    z-index: 100;
+  }
+
+  .menu-inner {
+    padding: 2em 0 0 0;
+  }
+
+  .menu-img {
+    position: absolute;
+    right: 0;
+    object-fit: contain;
+    width: 33em;
+  }
+
+  .pizza {
+    padding: 1.3em 0;
+  }
 }
 </style>

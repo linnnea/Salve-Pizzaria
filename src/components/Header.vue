@@ -17,7 +17,7 @@ nav {
   display: flex;
   justify-content: space-between;
   text-transform: uppercase;
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid black;
 }
 
 nav > * {

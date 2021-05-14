@@ -1,5 +1,5 @@
 <template>
-  <div class="gallery">
+  <div class="gallery container">
     <div class="gallery-img border">
       <img src="../../public/img/inside.jpg" alt="" />
     </div>
@@ -33,6 +33,9 @@ export default {
 }
 
 .gallery-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 15em;
   height: auto;
   object-fit: contain;
@@ -46,7 +49,14 @@ export default {
 .gallery-img:nth-child(even) {
   transform: rotate(15deg);
 }
+
 .gallery-img:nth-child(odd) {
   transform: rotate(-15deg);
+}
+
+@media only screen and (min-width: 768px) {
+  .gallery-img {
+    width: 14em;
+  }
 }
 </style>

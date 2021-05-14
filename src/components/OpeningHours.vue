@@ -31,4 +31,15 @@ h2 {
 h4 {
   padding: 0.2em;
 }
+
+@media only screen and (min-width: 768px) {
+  .opening-hours {
+    font-size: 1.8rem;
+    height: 23em;
+  }
+
+  h2 {
+    font-size: 4rem;
+  }
+}
 </style>

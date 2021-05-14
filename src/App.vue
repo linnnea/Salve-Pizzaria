@@ -46,14 +46,27 @@ export default {
   box-sizing: border-box;
 }
 
+body {
+  background: var(--bg);
+  font-family: droid-sans-mono, monospace;
+}
+
 #app {
-  background: #f0eee8;
   color: var(--dark);
   height: 100vh;
 }
 
 h1 {
+  text-transform: uppercase;
   color: var(--primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: mono45-headline, monospace;
 }
 
 img {
@@ -62,8 +75,27 @@ img {
 }
 
 :root {
-  --primary: #a54e4e;
+  /* Breaking points */
+  --tablet: 768px;
+  --small: 1024px;
+  --large: 1366px;
+  --xl: 1920px;
+
+  /* Colors */
+  --primary: #d44e48;
+  --bg: #eee4db;
   --dark: #2c2c2c;
   --light: #fff;
+}
+
+.container {
+  margin: 0 auto;
+  width: 90%;
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    width: 80%;
+  }
 }
 </style>

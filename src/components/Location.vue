@@ -1,16 +1,18 @@
 <template>
-  <div class="location">
-    <div class="info">
-      <div class="headline">
-        <h2>Where to find us</h2>
+  <div class="location container">
+    <div class="inner-location">
+      <div class="info">
+        <div class="headline">
+          <h2>Where to find us</h2>
+        </div>
+        <img src="../../public/img/takeaway.jpg" alt="" />
       </div>
-      <img src="../../public/img/takeaway.jpg" alt="" />
-    </div>
 
-    <div class="address">
-      <span>Travessa harmônia, 45</span>
-      <span>Florianópolis, Santa Catarina</span>
-      <span>+55 48 3879-7503</span>
+      <div class="address">
+        <span>Travessa harmônia, 45</span>
+        <span>Florianópolis, Santa Catarina</span>
+        <span>+55 48 3879-7503</span>
+      </div>
     </div>
 
     <div class="mapouter">
@@ -45,7 +47,7 @@ export default {
 }
 
 .info img {
-  padding: 1em;
+  padding: 1em 0;
 }
 
 .headline {
@@ -56,7 +58,7 @@ export default {
   position: absolute;
   background: var(--light);
   color: var(--dark);
-  width: 21em;
+  width: 16em;
   height: 2em;
   padding: 2em 0;
   transform: rotate(-15deg);
@@ -65,9 +67,10 @@ export default {
 .address {
   display: flex;
   flex-direction: column;
-  font-size: 1.5rem;
+  font-family: mono45-headline, monospace;
+  font-size: 1.3rem;
   text-transform: uppercase;
-  margin: 1em 0.8em 4em 0.8em;
+  margin: 1em 0 4em 0;
 }
 
 .address span:nth-child(3) {
@@ -77,7 +80,7 @@ export default {
 .mapouter {
   position: relative;
   text-align: right;
-  padding: 0 1em 5em 1em;
+  padding-bottom: 5em;
 }
 
 .gmap {
@@ -87,5 +90,53 @@ export default {
 
 #gmap_canvas {
   height: 20em;
+}
+
+@media only screen and (min-width: 768px) {
+  .info h2 {
+    font-size: 3.5rem;
+  }
+
+  .headline {
+    left: -1em;
+    width: 26em;
+    padding: 2.7em 0;
+  }
+
+  .address {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .location {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .inner-location {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    justify-content: center;
+  }
+
+  .headline img {
+    width: 28em;
+  }
+
+  .mapouter {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    justify-content: center;
+  }
+  #gmap_canvas {
+    width: 20em;
+    height: 31.7em;
+  }
 }
 </style>

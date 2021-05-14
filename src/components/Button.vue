@@ -20,8 +20,8 @@ a.btn {
   color: var(--primary);
   background: transparent;
   text-transform: initial;
-  border: 1px solid var(--dark);
-  margin-top: -10em;
+  border: 2px solid var(--dark);
+  margin-top: -9em;
 }
 
 a.btn:hover {

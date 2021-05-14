@@ -27,6 +27,7 @@ export default {
 }
 
 h1 {
+  font-family: anton, sans-serif;
   color: var(--primary);
 }
 </style>
