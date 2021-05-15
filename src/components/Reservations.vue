@@ -5,7 +5,7 @@
         <h2>Takeaway</h2>
         <p>Call +55 48 3879-7503</p>
       </div>
-      <img src="../../public/img/takeaway.jpg" alt="" />
+      <img src="../assets/takeaway.jpg" alt="" />
     </div>
 
     <div class="reservations">
@@ -183,6 +183,7 @@ input[type="submit"]:hover {
 
   .takeaway img {
     margin: 3em 0 2em 0;
+    width: 17em;
   }
 
   .reservations {

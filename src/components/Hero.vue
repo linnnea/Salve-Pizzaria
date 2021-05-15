@@ -21,7 +21,7 @@ export default {
 .hero {
   display: grid;
   place-items: center;
-  height: calc(100% - 67px);
+  height: 100vh;
   font-size: 13rem;
   text-transform: uppercase;
 }

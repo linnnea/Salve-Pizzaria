@@ -32,7 +32,7 @@
       </div>
     </div>
     <div class="menu-img">
-      <img src="../../public/img/menu.jpg" alt="" />
+      <img src="../assets/menu.jpg" alt="" />
     </div>
   </div>
 </template>
@@ -52,7 +52,7 @@ export default {
       rgba(255, 255, 255, 0.9),
       rgba(255, 255, 255, 0.9)
     ),
-    url("../../public/img/menu.png");
+    url("../assets/menu.png");
   background-repeat: no-repeat;
   background-size: cover;
   margin: 3em 0 8em 0;

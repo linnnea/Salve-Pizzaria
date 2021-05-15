@@ -11,7 +11,7 @@
     >
 
     <div class="intro-img">
-      <img src="../../public/img/intro.png" alt="" />
+      <img src="../assets/intro.png" alt="" />
     </div>
   </div>
 </template>

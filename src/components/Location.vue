@@ -5,7 +5,7 @@
         <div class="headline">
           <h2>Where to find us</h2>
         </div>
-        <img src="../../public/img/takeaway.jpg" alt="" />
+        <img src="../assets/restaurant.jpg" alt="" />
       </div>
 
       <div class="address">
@@ -109,6 +109,11 @@ export default {
 }
 
 @media only screen and (min-width: 1024px) {
+  .opening-hours {
+    justify-content: flex-end;
+    height: 15em;
+  }
+
   .location {
     display: flex;
     flex-direction: row;
@@ -120,20 +125,21 @@ export default {
   .inner-location {
     display: flex;
     flex-direction: column;
-    align-self: flex-end;
+    align-self: center;
     justify-content: center;
   }
 
-  .headline img {
+  .info img {
     width: 28em;
   }
 
   .mapouter {
     display: flex;
     flex-direction: column;
-    align-self: flex-end;
+    align-self: center;
     justify-content: center;
   }
+
   #gmap_canvas {
     width: 20em;
     height: 31.7em;

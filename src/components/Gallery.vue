@@ -1,19 +1,19 @@
 <template>
   <div class="gallery container">
     <div class="gallery-img border">
-      <img src="../../public/img/inside.jpg" alt="" />
+      <img src="../assets/inside.jpg" alt="" />
     </div>
     <div class="gallery-img border">
-      <img src="../../public/img/posters.jpg" alt="" />
+      <img src="../assets/posters.jpg" alt="" />
     </div>
     <div class="gallery-img border">
-      <img src="../../public/img/Cartazes_SALVE.jpeg" alt="" />
+      <img src="../assets/Cartazes_SALVE.jpeg" alt="" />
     </div>
     <div class="gallery-img">
-      <img src="../../public/img/pizza.jpeg" alt="" />
+      <img src="../assets/pizza.jpeg" alt="" />
     </div>
     <div class="gallery-img border">
-      <img src="../../public/img/lightsign.jpg" alt="" />
+      <img src="../assets/lightsign.jpg" alt="" />
     </div>
   </div>
 </template>
@@ -57,6 +57,12 @@ export default {
 @media only screen and (min-width: 768px) {
   .gallery-img {
     width: 14em;
+  }
+}
+
+@media only screen and (min-width: 1366px) {
+  .gallery-img {
+    width: 18em;
   }
 }
 </style>

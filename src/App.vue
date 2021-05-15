@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header />
+    <Navigation />
     <Hero />
     <Intro />
     <Menu />
@@ -9,11 +9,12 @@
     <OpeningHours />
     <Location />
     <Footer />
+    <router-view />
   </div>
 </template>
 
 <script>
-import Header from "./components/Header";
+import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
 import Intro from "./components/Intro";
 import Menu from "./components/Menu";
@@ -26,7 +27,7 @@ import Footer from "./components/Footer";
 export default {
   name: "App",
   components: {
-    Header,
+    Navigation,
     Hero,
     Intro,
     Menu,
@@ -53,7 +54,9 @@ body {
 
 #app {
   color: var(--dark);
-  height: 100vh;
+  min-height: 100vh;
+  position: relative;
+  background-color: #f1f1f1;
 }
 
 h1 {
@@ -96,6 +99,7 @@ img {
 @media only screen and (min-width: 768px) {
   .container {
     width: 80%;
+    max-width: 55em;
   }
 }
 </style>
