@@ -1,25 +1,32 @@
 <template>
   <header :class="{ 'scrolled-nav': scrolledNav }">
     <nav>
-      <div class="branding">
+      <div v-show="mobile" class="branding">
         <img src="../assets/logo.png" alt="" />
       </div>
 
       <ul v-show="!mobile" class="navigation">
         <li>
-          <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
+          <router-link class="link" :to="{ name: 'Menu' }">Menu</router-link>
         </li>
         <li>
-          <router-link class="link" :to="{ name: 'About' }">About</router-link>
+          <router-link class="link" :to="{ name: 'Reservations' }"
+            >Reservations</router-link
+          >
         </li>
+
+        <div class="branding">
+          <img src="../assets/logo.png" alt="" />
+        </div>
+
         <li>
-          <router-link class="link" :to="{ name: '' }">Portfolio</router-link>
+          <router-link class="link" :to="{ name: '' }">Our Story</router-link>
         </li>
         <li>
           <router-link class="link" :to="{ name: '' }">Contact</router-link>
         </li>
       </ul>
-      <div class="icon" :class="{ 'icon-mobile': mobileNav }">
+      <div v-show="mobile" class="icon" :class="{ 'icon-mobile': mobileNav }">
         <i
           @click="toggleMobileNav"
           v-show="mobile"
@@ -30,15 +37,15 @@
       <transition name="mobile-nav">
         <ul v-show="mobileNav" class="dropdown-nav">
           <li @click="closeMobileNav">
-            <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
+            <router-link class="link" :to="{ name: 'Menu' }">Menu</router-link>
           </li>
           <li @click="closeMobileNav">
-            <router-link class="link" :to="{ name: 'About' }"
-              >About</router-link
+            <router-link class="link" :to="{ name: 'Reservations' }"
+              >Reservations</router-link
             >
           </li>
           <li @click="closeMobileNav">
-            <router-link class="link" :to="{ name: '' }">Portfolio</router-link>
+            <router-link class="link" :to="{ name: '' }">Our Story</router-link>
           </li>
           <li @click="closeMobileNav">
             <router-link class="link" :to="{ name: '' }">Contact</router-link>
@@ -51,7 +58,7 @@
 
 <script>
 export default {
-  name: "navigation",
+  name: "Navigation",
   data() {
     return {
       scrolledNav: null,
@@ -111,6 +118,7 @@ header {
 header nav {
   position: relative;
   display: flex;
+  justify-content: center;
   transition: 0.5s ease all;
   width: 100%;
   margin: 0 auto;
@@ -122,10 +130,15 @@ header nav {
   }
 }
 
+header nav ul {
+  border-bottom: 1px solid var(--dark);
+  padding: 0.3em;
+}
+
 header nav ul,
 header nav .link {
   font-weight: 500;
-  color: #fff;
+  color: var(--dark);
   list-style: none;
   text-decoration: none;
 }
@@ -145,14 +158,13 @@ header nav .link {
 header nav .link:hover {
   color: var(--primary);
   text-decoration: line-through;
+  text-decoration-thickness: 3px;
+  text-decoration-style: wavy;
   text-decoration-color: var(--primary);
 }
 
 header nav .branding {
   position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 16;
 }
 
 header nav .branding img {
@@ -163,8 +175,8 @@ header nav .branding img {
 header nav .navigation {
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
   flex: 1;
-  justify-content: flex-end;
 }
 
 header nav .icon {
@@ -175,6 +187,7 @@ header nav .icon {
   right: 0;
   background: var(--dark);
   padding: 1.5em;
+  transition: 0.5s ease all;
   z-index: 15;
 }
 
@@ -224,6 +237,7 @@ header nav .dropdown-nav li .link {
 header nav .mobile-nav-enter-active,
 header nav .mobile-nav-leave-active {
   transition: 1s ease all;
+  transform: translateX(-100%);
 }
 
 header nav .mobile-nav-enter-from,
@@ -235,19 +249,20 @@ header nav .mobile-nav-enter-to {
   transform: translateX(0);
 }
 
-.scrolled-nav {
-  background: #000;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+.scrolled-nav nav {
+  padding: 0;
+  height: 3em;
 }
 
-.scrolled-nav nav {
-  padding: 8px 0;
+.scrolled-nav .link {
+  font-size: 0.6rem;
+}
+
+.scrolled-nav .icon {
+  padding: 0.4em 0.8em;
 }
 
 .scrolled-nav nav .branding img {
-  width: 40px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  width: 4em;
 }
 </style>

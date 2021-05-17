@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <!-- <Test /> -->
     <Navigation />
     <Hero />
     <Intro />
@@ -7,13 +8,14 @@
     <Reservations />
     <Gallery />
     <OpeningHours />
-    <Location />
+    <Location /> -->
+    <!-- <router-view /> -->
     <Footer />
-    <router-view />
   </div>
 </template>
 
 <script>
+// import Test from "./components/Test";
 import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
 import Intro from "./components/Intro";
@@ -27,6 +29,7 @@ import Footer from "./components/Footer";
 export default {
   name: "App",
   components: {
+    // Test,
     Navigation,
     Hero,
     Intro,
