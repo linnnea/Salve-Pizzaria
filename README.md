@@ -3,6 +3,7 @@
 ## Description
 
 Concept website built with Vuejs and based on https://fatfacestudio.com/ cool restaurant project.  
+[View the demo](https://salve-pizzaria.vercel.app/)
 
 ## Project setup
 ```
