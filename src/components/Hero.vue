@@ -41,7 +41,7 @@ export default {
   width: 100vw;
   max-width: 100%;
   height: 20em;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .track {
