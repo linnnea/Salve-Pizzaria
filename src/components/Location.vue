@@ -1,5 +1,5 @@
 <template>
-  <div class="location container">
+  <div class="location container" id="section-contact">
     <div class="inner-location">
       <div class="info">
         <div class="headline">

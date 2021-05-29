@@ -1,6 +1,9 @@
 <template>
   <div>
-    <a href="" class="btn">Order Now</a>
+    <router-link class="link" :to="{ path: '/menu', hash: '#section-menu' }">
+      <a href="" class="btn">Order Now</a>
+    </router-link>
+    <router-view />
   </div>
 </template>
 
@@ -21,7 +24,6 @@ a.btn {
   background: transparent;
   text-transform: initial;
   border: 2px solid var(--dark);
-  margin-top: -9em;
 }
 
 a.btn:hover {

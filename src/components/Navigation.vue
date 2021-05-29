@@ -1,58 +1,57 @@
 <template>
   <header :class="{ 'scrolled-nav': scrolledNav }">
     <nav>
-      <div v-show="mobile" class="branding">
-        <img src="../assets/logo.png" alt="" />
-      </div>
-
-      <ul v-show="!mobile" class="navigation">
-        <li>
-          <router-link class="link" :to="{ name: 'Menu' }">Menu</router-link>
-        </li>
-        <li>
-          <router-link class="link" :to="{ name: 'Reservations' }"
-            >Reservations</router-link
-          >
-        </li>
-
-        <div class="branding">
+      <!-- <div v-if="mobile" class="branding"> -->
+        <router-link :to="{ path: '/hero', hash: '#home' }" v-if="mobile" class="branding">
           <img src="../assets/logo.png" alt="" />
-        </div>
+        </router-link>
+      <!-- </div> -->
 
+      <ul v-if="!mobile" class="navigation">
         <li>
-          <router-link class="link" :to="{ name: '' }">Our Story</router-link>
+          <router-link class="link" :to="{ path: '/menu', hash: '#section-menu' }">Menu</router-link>
         </li>
         <li>
-          <router-link class="link" :to="{ name: '' }">Contact</router-link>
+          <router-link class="link" :to="{ path: '/reservations', hash: '#section-reservations' }">Reservations</router-link>
+        </li>
+
+         <router-link :to="{ path: '/hero', hash: '#home' }" class="branding">
+          <img src="../assets/logo.png" alt="" />
+        </router-link>
+
+        <li>
+          <router-link class="link" :to="{ path: '/openinghours', hash: '#section-openinghours' }">Opening Hours</router-link>
+        </li>
+        <li>
+          <router-link class="link" :to="{ path: '/location', hash: '#section-contact' }">Contact</router-link>
         </li>
       </ul>
-      <div v-show="mobile" class="icon" :class="{ 'icon-mobile': mobileNav }">
+      <div v-if="mobile" class="icon" :class="{ 'icon-mobile': mobileNav }">
         <i
           @click="toggleMobileNav"
-          v-show="mobile"
+          v-if="mobile"
           class="far fa-bars"
           :class="{ 'icon-active': mobileNav }"
         ></i>
       </div>
       <transition name="mobile-nav">
-        <ul v-show="mobileNav" class="dropdown-nav">
+        <ul v-if="mobileNav" class="dropdown-nav">
           <li @click="closeMobileNav">
-            <router-link class="link" :to="{ name: 'Menu' }">Menu</router-link>
+            <router-link class="link" :to="{ path: '/menu', hash: '#section-menu' }">Menu</router-link>
           </li>
           <li @click="closeMobileNav">
-            <router-link class="link" :to="{ name: 'Reservations' }"
-              >Reservations</router-link
-            >
+            <router-link class="link" :to="{ path: '/reservations', hash: '#section-reservations' }">Reservations</router-link>
           </li>
           <li @click="closeMobileNav">
-            <router-link class="link" :to="{ name: '' }">Our Story</router-link>
+            <router-link class="link" :to="{ path: '/openinghours', hash: '#section-openinghours' }">Opening Hours</router-link>
           </li>
           <li @click="closeMobileNav">
-            <router-link class="link" :to="{ name: '' }">Contact</router-link>
+            <router-link class="link" :to="{ path: '/location', hash: '#section-contact' }">Contact</router-link>
           </li>
         </ul>
       </transition>
     </nav>
+  <router-view/>
   </header>
 </template>
 
@@ -73,6 +72,16 @@ export default {
   },
   mounted() {
     window.addEventListener("scroll", this.updateScroll);
+  },
+  watch: {
+    mobileNav: function () {
+      if (this.mobileNav) {
+        document.documentElement.style.overflow = "hidden";
+        return;
+      }
+
+      document.documentElement.style.overflow = "auto";
+    },
   },
   methods: {
     toggleMobileNav() {
@@ -153,6 +162,7 @@ header nav .link {
   transition: 0.5s ease all;
   padding-bottom: 4px;
   border-bottom: 1px solid transparent;
+  cursor: pointer;
 }
 
 header nav .link:hover {
@@ -254,15 +264,16 @@ header nav .mobile-nav-enter-to {
   height: 3em;
 }
 
-.scrolled-nav .link {
-  font-size: 0.6rem;
-}
+@media (min-width: 1140px) {
+  .scrolled-nav .link {
+    font-size: 0.6rem;
+  }
+  .scrolled-nav .icon {
+    padding: 0.4em 0.8em;
+  }
 
-.scrolled-nav .icon {
-  padding: 0.4em 0.8em;
-}
-
-.scrolled-nav nav .branding img {
-  width: 4em;
+  .scrolled-nav nav .branding img {
+    width: 4em;
+  }
 }
 </style>

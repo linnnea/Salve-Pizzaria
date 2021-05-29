@@ -1,5 +1,5 @@
 <template>
-  <div class="container-menu container">
+  <div class="container-menu container" id="section-menu">
     <div class="menu">
       <div class="menu-inner">
         <h1>Menu</h1>
@@ -102,7 +102,7 @@ export default {
     width: 26em;
     height: 32em;
     margin: auto 0 0 0;
-    z-index: 100;
+    z-index: 90;
   }
 
   .menu-inner {

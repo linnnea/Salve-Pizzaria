@@ -1,5 +1,5 @@
 <template>
-  <div class="container-reservations container">
+  <div class="container-reservations container" id="section-reservations">
     <div class="takeaway">
       <div class="headline">
         <h2>Takeaway</h2>
@@ -12,23 +12,26 @@
       <div class="inner-reservations">
         <h2>Make a Reservation</h2>
 
-        <form>
-          <input
-            type="text"
-            id="firstName"
-            name="firstName"
-            class="input"
-            placeholder="First Name"
-          />
-          <input
-            type="text"
-            id="lastName"
-            name="lastName"
-            placeholder="Last Name"
-          />
-          <input type="text" id="eMail" name="eMail" placeholder="Email" />
-          <input type="date" id="date" name="date" />
-          <input type="submit" value="Book a Table" />
+        <form @submit.prevent="handleSubmit">
+          <input type="text" required v-model="name" placeholder="Name" />
+
+          <input type="email" required v-model="email" placeholder="E-mail" />
+
+          <select v-model="guestNumber">
+            <option
+              v-for="option in guests"
+              :key="option.value"
+              :value="option.value"
+            >
+              {{ option.text }}
+            </option>
+          </select>
+
+          <input type="date" required />
+
+          <div class="submit">
+            <button>Book a Table</button>
+          </div>
         </form>
       </div>
     </div>
@@ -38,6 +41,28 @@
 <script>
 export default {
   name: "Reservations",
+  data() {
+    return {
+      name: "",
+      email: "",
+      guestNumber: 2,
+      emailError: "",
+
+      guests: [
+        { value: 1, text: "1 adult" },
+        { value: 2, text: "2 adults" },
+        { value: 3, text: "3 adults" },
+        { value: 4, text: "4 adults" },
+        { value: 5, text: "5 adults" },
+      ],
+    };
+  },
+  methods: {
+    handleSubmit() {
+      const msg = `Hi, ${this.name}! \nBooking information has been sent to ${this.email} .\nThank you ^_^`;
+      alert(msg);
+    },
+  },
 };
 </script>
 
@@ -87,7 +112,7 @@ export default {
   justify-content: center;
   text-transform: uppercase;
   padding: 1em;
-  height: 30em;
+  height: 35em;
 }
 
 .inner-reservations h2 {
@@ -98,14 +123,21 @@ export default {
 form {
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
 }
 
-input {
-  padding: 1.3em;
-  margin: 0.5em;
-  border: 1px solid var(--light);
+input,
+select {
   background: none;
   color: var(--light);
+}
+
+input,
+select {
+  padding: 1.3em;
+  margin: 0.5em 0;
+  border: 1px solid var(--light);
 }
 
 input[type="text"]:focus,
@@ -114,18 +146,20 @@ input[type="date"]:focus {
   outline: var(--light);
 }
 
-/* Chrome/ Opera/ Safari */
 ::-webkit-input-placeholder {
   color: var(--light);
 }
 
-input[type="submit"] {
+.submit button {
+  font-family: 'droid-sans-mono';
+  padding: 1.8em;
   background: var(--light);
   border: none;
   color: var(--primary);
+  width: 100%;
 }
 
-input[type="submit"]:hover {
+.submit button:hover {
   background: var(--dark);
   border: none;
   color: var(--light);
@@ -145,8 +179,13 @@ input[type="submit"]:hover {
     padding-bottom: 2em;
   }
 
-  input {
+  input,
+  select {
     margin: 1em;
+  }
+
+  .submit {
+    padding: 1em 0.8em;
   }
 }
 
@@ -189,15 +228,15 @@ input[type="submit"]:hover {
   .reservations {
     display: flex;
     align-items: flex-end;
-    justify-content: flex-end;
+    justify-content: center;
     flex-direction: column;
-    height: 31em;
+    height: 35em;
     margin: auto 0 0 0;
   }
 
   .inner-reservations {
     width: 23em;
-    height: 30em;
+    height: 31em;
     padding: 1.5em;
   }
 

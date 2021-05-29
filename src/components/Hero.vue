@@ -1,13 +1,22 @@
 <template>
-  <div class="hero">
-    <h1>S</h1>
-
+  <div class="hero" id="home">
+    <div class="marquee">
+      <div class="track">
+        <div class="content">
+          SALVE! PIZZARIA 
+          SALVE! PIZZARIA 
+          SALVE! PIZZARIA 
+          SALVE! PIZZARIA 
+          SALVE! PIZZARIA
+        </div>
+      </div>
+    </div>
     <Button />
   </div>
 </template>
 
 <script>
-import Button from "./Button.vue";
+import Button from "../components/Button";
 
 export default {
   name: "Hero",
@@ -22,12 +31,39 @@ export default {
   display: grid;
   place-items: center;
   height: 100vh;
-  font-size: 13rem;
   text-transform: uppercase;
 }
 
-h1 {
+.marquee {
+  display: flex;
+  align-items: flex-end;
+
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  height: 30em;
+  overflow-x: hidden;
+}
+
+.track {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 32s linear infinite;
+}
+
+.content {
+  padding-top: .05em;
   font-family: anton, sans-serif;
+  font-size: 21rem;
+  line-height: 1;
   color: var(--primary);
 }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="opening-hours">
+  <div class="opening-hours" id="section-openinghours">
     <h2>Opening Hours</h2>
     <h4>Tuesday - Sunday</h4>
     <h4>19:00 - 23:30</h4>
