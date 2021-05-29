@@ -7,16 +7,12 @@
       </div>
       <img src="../assets/takeaway.jpg" alt="" />
     </div>
-
     <div class="reservations">
       <div class="inner-reservations">
         <h2>Make a Reservation</h2>
-
         <form @submit.prevent="handleSubmit">
           <input type="text" required v-model="name" placeholder="Name" />
-
           <input type="email" required v-model="email" placeholder="E-mail" />
-
           <select v-model="guestNumber">
             <option
               v-for="option in guests"
@@ -26,9 +22,7 @@
               {{ option.text }}
             </option>
           </select>
-
           <input type="date" required />
-
           <div class="submit">
             <button>Book a Table</button>
           </div>

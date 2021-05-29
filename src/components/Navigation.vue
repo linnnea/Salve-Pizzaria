@@ -8,7 +8,6 @@
       >
         <img src="../assets/logo.png" alt="" />
       </router-link>
-
       <ul v-if="!mobile" class="navigation">
         <li>
           <router-link class="link" :to="{ hash: '#section-menu' }">
@@ -20,11 +19,9 @@
             Reservations
           </router-link>
         </li>
-
         <router-link class="branding" :to="{ hash: '#home' }" >
           <img src="../assets/logo.png" alt="" />
         </router-link>
-
         <li>
           <router-link class="link" :to="{ hash: '#section-openinghours' }">
             Opening Hours

@@ -2,14 +2,11 @@
   <div class="salve-3x container" id="section-intro">
     <span>Salve</span>
     <span>Salve</span>
-    <span
-      >Salve
+    <span>Salve
       <span class="small">
         is a friendly way of saying hi. It represents the passion and
         friendliness of Neapolitan people.
-      </span></span
-    >
-
+      </span></span>
     <div class="intro-img">
       <img src="../assets/intro.png" alt="" />
     </div>

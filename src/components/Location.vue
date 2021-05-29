@@ -7,14 +7,12 @@
         </div>
         <img src="../assets/restaurant.jpg" alt="" />
       </div>
-
       <div class="address">
         <span>Travessa harmônia, 45</span>
         <span>Florianópolis, Santa Catarina</span>
         <span>+55 48 3879-7503</span>
       </div>
     </div>
-
     <div class="mapouter">
       <div class="gmap">
         <iframe

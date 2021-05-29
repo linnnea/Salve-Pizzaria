@@ -9,24 +9,24 @@
             <div class="pizza-price">14$</div>
           </div>
           <div class="pizza">
-            <div class="pizza-name">Margherita</div>
-            <div class="pizza-price">14$</div>
+            <div class="pizza-name">Salsiccia</div>
+            <div class="pizza-price">18$</div>
           </div>
           <div class="pizza">
-            <div class="pizza-name">Margherita</div>
-            <div class="pizza-price">14$</div>
+            <div class="pizza-name">Frutti Di Mare</div>
+            <div class="pizza-price">19$</div>
           </div>
           <div class="pizza">
-            <div class="pizza-name">Margherita</div>
-            <div class="pizza-price">14$</div>
+            <div class="pizza-name">Arrabiata</div>
+            <div class="pizza-price">13$</div>
           </div>
           <div class="pizza">
-            <div class="pizza-name">Margherita</div>
-            <div class="pizza-price">14$</div>
+            <div class="pizza-name">Salame Pepperoni</div>
+            <div class="pizza-price">15$</div>
           </div>
           <div class="pizza">
-            <div class="pizza-name">Margherita</div>
-            <div class="pizza-price">14$</div>
+            <div class="pizza-name">Norma</div>
+            <div class="pizza-price">16$</div>
           </div>
         </div>
       </div>
