@@ -35,13 +35,12 @@ export default {
 }
 
 .marquee {
-  display: flex;
-  align-items: flex-end;
-
   position: relative;
+  top: 50%;
+  transform: translateY(-50%);
   width: 100vw;
   max-width: 100%;
-  height: 30em;
+  height: 20em;
   overflow-x: hidden;
 }
 
