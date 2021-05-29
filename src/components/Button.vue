@@ -1,15 +1,11 @@
 <template>
   <div>
-    <router-link class="link" :to="{ path: '/menu', hash: '#section-menu' }">
-      <a href="" class="btn">Order Now</a>
+    <router-link :to="{ path: '/menu', hash: '#section-menu' }" class="btn">
+      Order Now
     </router-link>
     <router-view />
   </div>
 </template>
-
-<script>
-export default {};
-</script>
 
 <style scoped>
 a.btn {

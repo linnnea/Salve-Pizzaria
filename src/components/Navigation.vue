@@ -1,52 +1,74 @@
 <template>
   <header :class="{ 'scrolled-nav': scrolledNav }">
     <nav>
-      <!-- <div v-if="mobile" class="branding"> -->
-        <router-link :to="{ path: '/hero', hash: '#home' }" v-if="mobile" class="branding">
-          <img src="../assets/logo.png" alt="" />
-        </router-link>
-      <!-- </div> -->
+      <router-link 
+        v-if="mobile" 
+        class="branding"
+        :to="{ hash: '#home' }" 
+      >
+        <img src="../assets/logo.png" alt="" />
+      </router-link>
 
       <ul v-if="!mobile" class="navigation">
         <li>
-          <router-link class="link" :to="{ path: '/menu', hash: '#section-menu' }">Menu</router-link>
+          <router-link class="link" :to="{ hash: '#section-menu' }">
+            Menu
+          </router-link>
         </li>
         <li>
-          <router-link class="link" :to="{ path: '/reservations', hash: '#section-reservations' }">Reservations</router-link>
+          <router-link class="link" :to="{ hash: '#section-reservations' }">
+            Reservations
+          </router-link>
         </li>
 
-         <router-link :to="{ path: '/hero', hash: '#home' }" class="branding">
+        <router-link class="branding" :to="{ hash: '#home' }" >
           <img src="../assets/logo.png" alt="" />
         </router-link>
 
         <li>
-          <router-link class="link" :to="{ path: '/openinghours', hash: '#section-openinghours' }">Opening Hours</router-link>
+          <router-link class="link" :to="{ hash: '#section-openinghours' }">
+            Opening Hours
+          </router-link>
         </li>
         <li>
-          <router-link class="link" :to="{ path: '/location', hash: '#section-contact' }">Contact</router-link>
+          <router-link class="link" :to="{ hash: '#section-contact' }">
+            Contact
+          </router-link>
         </li>
       </ul>
-      <div v-if="mobile" class="icon" :class="{ 'icon-mobile': mobileNav }">
+      <div 
+        v-if="mobile" 
+        class="icon"
+        :class="{ 'icon-mobile': mobileNav }"
+      >
         <i
-          @click="toggleMobileNav"
           v-if="mobile"
           class="far fa-bars"
+          @click="toggleMobileNav"
           :class="{ 'icon-active': mobileNav }"
         ></i>
       </div>
       <transition name="mobile-nav">
         <ul v-if="mobileNav" class="dropdown-nav">
           <li @click="closeMobileNav">
-            <router-link class="link" :to="{ path: '/menu', hash: '#section-menu' }">Menu</router-link>
+            <router-link class="link" :to="{ hash: '#section-menu' }">
+              Menu
+            </router-link>
           </li>
           <li @click="closeMobileNav">
-            <router-link class="link" :to="{ path: '/reservations', hash: '#section-reservations' }">Reservations</router-link>
+            <router-link class="link" :to="{ hash: '#section-reservations' }">
+              Reservations
+            </router-link>
           </li>
           <li @click="closeMobileNav">
-            <router-link class="link" :to="{ path: '/openinghours', hash: '#section-openinghours' }">Opening Hours</router-link>
+            <router-link class="link" :to="{ hash: '#section-openinghours' }">
+              Opening Hours
+            </router-link>
           </li>
           <li @click="closeMobileNav">
-            <router-link class="link" :to="{ path: '/location', hash: '#section-contact' }">Contact</router-link>
+            <router-link class="link" :to="{ hash: '#section-contact' }">
+              Contact
+            </router-link>
           </li>
         </ul>
       </transition>
@@ -60,9 +82,9 @@ export default {
   name: "Navigation",
   data() {
     return {
-      scrolledNav: null,
       mobile: null,
       mobileNav: null,
+      scrolledNav: null,
       windowWidth: null,
     };
   },
@@ -79,7 +101,6 @@ export default {
         document.documentElement.style.overflow = "hidden";
         return;
       }
-
       document.documentElement.style.overflow = "auto";
     },
   },
@@ -87,7 +108,6 @@ export default {
     toggleMobileNav() {
       this.mobileNav = !this.mobileNav;
     },
-
     updateScroll() {
       const scrollPosition = window.scrollY;
       if (scrollPosition > 50) {
@@ -96,7 +116,6 @@ export default {
       }
       this.scrolledNav = false;
     },
-
     checkScreen() {
       this.windowWidth = window.innerWidth;
       if (this.windowWidth <= 750) {
@@ -107,7 +126,6 @@ export default {
       this.mobileNav = false;
       return;
     },
-
     closeMobileNav() {
       return (this.mobileNav = false);
     },

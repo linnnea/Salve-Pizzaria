@@ -16,12 +16,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "Intro",
-};
-</script>
-
 <style scoped>
 .salve-3x {
   display: flex;

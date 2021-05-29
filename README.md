@@ -2,7 +2,7 @@
 
 ## Description
 
-Concept website built with Vuejs and based on https://fatfacestudio.com/ project. 
+Concept website built with Vuejs and based on https://fatfacestudio.com/ cool restaurant project.  
 
 ## Project setup
 ```
